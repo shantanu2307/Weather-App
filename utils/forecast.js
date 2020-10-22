@@ -5,7 +5,10 @@ const forecast = (lat, long, callback) => {
     encodeURIComponent(lat) +
     ',' +
     encodeURIComponent(long);
-  request({ url: url, json: true }, (error, response) => {
+  request({
+    url: url,
+    json: true
+  }, (error, response) => {
     if (error) {
       callback('Unable to connect to the network!', undefined);
     } else if (response.body.error) {
@@ -14,6 +17,8 @@ const forecast = (lat, long, callback) => {
       callback(undefined, {
         temperature: response.body.current.temperature,
         humidity: response.body.current.humidity,
+        windspeed: response.body.current.wind_speed,
+        visibility: response.body.current.visibility,
       });
     }
   });

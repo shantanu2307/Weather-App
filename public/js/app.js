@@ -20,9 +20,9 @@ weatherForm.addEventListener('submit', (e) => {
             'Humidity is ' +
             data.forecast.humidity +
             ' % ' +
-            ' and Temperature is ' +
+            ' , Temperature is ' +
             data.forecast.temperature +
-            ' degrees ';
+            ' degrees ' + " , Windspeed is " + data.forecast.windspeed + " and Visibility is " + data.forecast.visibility + " !";
         }
       });
     }
